@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Merry Christmas Babe ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: radial-gradient(circle at top, #0a1a33, #020812);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+    color: white;
+}
+
+/* CARD */
+.card {
+    width: 320px;
+    height: 480px; /* slightly taller */
+    perspective: 1200px;
+    cursor: pointer;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1.4s ease;
+}
+
+.card.open .card-inner {
+    transform: rotateY(-180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,.4);
+}
+
+.card-front {
+    background: linear-gradient(135deg, #1a2a6c, #3f4c99);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.card-front span {
+    animation: glow 1.5s infinite alternate;
+}
+
+.card-back {
+    background: radial-gradient(circle at top, #0a1a33, #020812);
+    transform: rotateY(180deg);
+    padding: 18px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* TEXT */
+h1 {
+    font-size: 1.8rem;
+    margin: 0 0 6px 0;
+    text-shadow: 0 0 15px #7f8cff;
+}
+
+.message {
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+}
+
+/* TREE AREA */
+.tree-area {
+    margin: 8px 0 6px;
+}
+
+/* TREE */
+.tree-wrapper {
+    animation: spin 14s linear infinite;
+}
+
+.tree {
+    position: relative;
+    margin: 0 auto;
+    width: 0;
+    height: 0;
+    border-left: 80px solid transparent;
+    border-right: 80px solid transparent;
+    border-bottom: 150px solid #0c6b3d;
+}
+
+.tree::before,
+.tree::after {
+    content: "";
+    position: absolute;
+    left: -62px;
+    border-left: 62px solid transparent;
+    border-right: 62px solid transparent;
+    border-bottom: 115px solid #0e7a45;
+}
+
+.tree::before { top: 26px; }
+.tree::after {
+    top: 60px;
+    border-bottom-color: #118f52;
+}
+
+/* STAR */
+.star {
+    position: absolute;
+    top: -28px;
+    left: -12px;
+    font-size: 22px;
+    color: gold;
+    text-shadow: 0 0 12px gold;
+    animation: glow 1.5s infinite alternate;
+}
+
+/* LIGHTS */
+.light {
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    animation: blink 1.3s infinite alternate;
+}
+
+.blue { background: #3fa9f5; box-shadow: 0 0 10px #3fa9f5; }
+.purple { background: #b26cff; box-shadow: 0 0 10px #b26cff; }
+
+/* ORNAMENTS */
+.ornament {
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: crimson;
+    box-shadow: 0 0 6px gold;
+}
+
+/* COUPLE */
+.couple {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-top: 6px;
+}
+
+.person {
+    width: 26px;
+    height: 40px;
+    background: #222;
+    border-radius: 15px 15px 8px 8px;
+    position: relative;
+    margin: 0 15px;
+}
+
+.person::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: #333;
+    border-radius: 50%;
+    position: absolute;
+    top: -18px;
+    left: 3px;
+}
+
+/* PRESENTS */
+.present {
+    width: 20px;
+    height: 20px;
+    background: crimson;
+    margin: 0 3px;
+    position: relative;
+}
+
+.present::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: gold;
+    top: 8px;
+}
+
+.present::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 4px;
+    background: gold;
+    left: 8px;
+}
+
+/* SNOW */
+.snowflake {
+    position: fixed;
+    top: -10px;
+    color: white;
+    animation: fall linear infinite;
+    pointer-events: none;
+}
+
+/* ANIMATIONS */
+@keyframes spin {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
+}
+
+@keyframes blink {
+    from { opacity: .3; }
+    to { opacity: 1; }
+}
+
+@keyframes glow {
+    from { transform: scale(1); }
+    to { transform: scale(1.2); }
+}
+
+@keyframes fall {
+    to { transform: translateY(110vh); }
+}
+
+audio { display:none; }
+</style>
+</head>
+
+<body>
+
+<div class="card" onclick="this.classList.toggle('open')">
+<div class="card-inner">
+
+<div class="card-front">
+    <span>🎁 Click to Open 💙💜</span>
+</div>
+
+<div class="card-back">
+    <h1>Merry Christmas Babe ❤️</h1>
+    <div class="message">Forever my favorite gift 🎁</div>
+
+    <div class="tree-area">
+        <div class="tree-wrapper">
+            <div class="tree">
+                <div class="star">⭐</div>
+
+                <div class="light blue" style="top:40px;left:-25px;"></div>
+                <div class="light purple" style="top:55px;left:20px;"></div>
+                <div class="light blue" style="top:70px;left:-5px;"></div>
+                <div class="light purple" style="top:90px;left:35px;"></div>
+                <div class="light blue" style="top:110px;left:-45px;"></div>
+
+                <div class="ornament" style="top:85px;left:-15px;"></div>
+                <div class="ornament" style="top:105px;left:10px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="couple">
+        <div class="person"></div>
+        <div class="present"></div>
+        <div class="present"></div>
+        <div class="person"></div>
+    </div>
+</div>
+
+</div>
+</div>
+
+<audio autoplay loop>
+    <source src="https://cdn.pixabay.com/audio/2022/12/22/audio_8e5cf98fa6.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+for (let i = 0; i < 40; i++) {
+    let snow = document.createElement("div");
+    snow.className = "snowflake";
+    snow.innerHTML = "❄";
+    snow.style.left = Math.random() * 100 + "vw";
+    snow.style.animationDuration = (5 + Math.random() * 5) + "s";
+    snow.style.fontSize = (10 + Math.random() * 10) + "px";
+    document.body.appendChild(snow);
+}
+</script>
+
+</body>
+</html>
